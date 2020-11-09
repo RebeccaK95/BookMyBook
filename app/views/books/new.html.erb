@@ -1,0 +1,8 @@
+<h1>Add a book</h1>
+<%= simple_form_for(@book) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.input :category %>
+  <%= f.input :address %>
+  <%= f.button :submit, 'Add book' %>
+<% end %>
