@@ -1,16 +1,18 @@
 <h1>Books</h1>
 <%= link_to "Add a book", new_book_path(@book)  %>
 <div class="container">
-  <% @books.each do |book| %>
-  <div class="card-product">
-      <img src="https://source.unsplash.com/random"/>
-      <div class="card-product-infos">
-        <h2><%= link_to book.title, "books/#{book.id}" %></h2>
-        <h3><%= book.author %></h3>
-        <p><%= book.category %></p>
-        <p><%= book.address %></p>
+  <div class="cards">
+    <% @books.each do |book| %>
+    <div class="card-product">
+        <img src="https://source.unsplash.com/random"/>
+        <div class="card-product-infos">
+          <h2><%= link_to book.title, "books/#{book.id}" %></h2>
+          <h3><%= book.author %></h3>
+          <p><%= book.category %></p>
+          <p><%= book.address %></p>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
