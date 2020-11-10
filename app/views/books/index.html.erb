@@ -6,7 +6,7 @@
     <div class="card-product">
         <img src="https://source.unsplash.com/random"/>
         <div class="card-product-infos">
-          <h2><%= link_to book.title, "books/#{book.id}" %></h2>
+          <h2><%= link_to book.title, book_path(book) %></h2>
           <h3><%= book.author %></h3>
           <p><%= book.category %></p>
           <p><%= book.address %></p>

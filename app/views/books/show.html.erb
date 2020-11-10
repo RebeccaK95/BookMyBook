@@ -3,5 +3,10 @@
 <p><%= @book.category %></p>
 <p><%= @book.address %></p>
 
+<%= link_to "Delete book",
+            book_path(@book),
+            method: :delete,
+            data: { confirm: "Are you sure you want to delete this book?" }
+            %>
 <%= link_to "Go back to all books", books_path  %>
 
