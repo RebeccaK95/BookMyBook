@@ -13,13 +13,14 @@
   width: 120px;
 }
 
-// .avatar {
-//   width: 400px;
-//   border-radius: 50%;
-// }
-
-.navbar {
-  a {
+#title a {
   text-decoration: none;
+  margin-left: -50px;
+  font-family: "Cormorant Garamond";
+  font-size: 70px;
+  &:hover {
+    color: #423144;
+    transition: 0.3s;
   }
 }
+
