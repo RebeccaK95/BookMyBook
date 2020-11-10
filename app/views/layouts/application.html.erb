@@ -14,20 +14,16 @@
     <div>
       <%= image_tag "book-logo2.png", id: "logo" %>
   </div>
-  <div><h1><%= link_to BookMyBook, books_path %> </h1></div>
+  <div><h1 id="title"><%= link_to BookMyBook, books_path %> </h1></div>
   <div>
-      <%= image_tag "jack.jpg", class: "avatar" %>
+      <%= image_tag "mama.png", class: "avatar" %>
     </div>
   </div>
 
 
-  <% if user_signed_in? %>
-    <p>Welcome <%= current_user.email %></p>
-  <% else %>
-    <p>Please sign in </p>
-  <% end %>
 
-  <body>
+
+  <body class="<%= @home_page ? 'homepage' : ''%>">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

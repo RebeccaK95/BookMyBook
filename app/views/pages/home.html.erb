@@ -1,16 +1,16 @@
-<%# <div class="navbar">
-  <div>
-    <%= image_tag "book-logo2.png", id: "logo" %>
- <%# </div>
- <div>
-    <%= image_tag "jack.jpg", class: "avatar" %>
-  <%# </div>
-</div> %>
+ <% if user_signed_in? %>
 
-<%# <h1>BookMyBook</h1> %>
-<%# <p>Find me in app/views/pages/home.html.erb</p> %>
-<%# <% if user_signed_in? %> 
-  <%# <p>Welcome <%= current_user.email %></p> 
-<%# <% else %> 
-  <%# <p>Please sign in </p> %>
-<%# <% end %>  
+  <div class="welcome">
+    <p >Welcome <%= current_user.email %></p>
+  </div>
+
+  <% else %>
+
+  <div id="sign-in">
+    <div class="welcome">
+    <p>Welcome!</p>
+    <p>Please <a href="" class="button">sign in</a> to enjoy the full experience of BookMyBook.</p>
+    </div>
+  </div>
+
+  <% end %>
