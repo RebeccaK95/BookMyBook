@@ -3,7 +3,7 @@
   <div class="welcome">
     <p >Welcome <%= current_user.email %></p>
     <div class="button">
-    <%= link_to "See my dashboard", user_bookings_path %>
+    <%= link_to "See my dashboard", user_bookings_path(:user_id) %>
     </div>
   </div>
 
