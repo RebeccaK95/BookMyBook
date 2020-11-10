@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :user
-  CATEGORIES = ["graphic novel", "fantasy", "short stories", "classics"]
+  has_many :bookings, dependent: :destroy
 
   validates :title, :author, :address, :category, presence: true
 end

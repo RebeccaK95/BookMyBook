@@ -20,3 +20,17 @@ end
 
 puts "done"
 
+
+puts " Creating bookings"
+
+5.times do
+  Booking.create(
+    user_id: (1..2).to_a.sample,
+    book_id: (3..5).to_a.sample,
+    start_date: Date.today,
+    end_date: Date.new('2020-12-11')
+    )
+end
+
+puts "done"
+
