@@ -1,5 +1,31 @@
 // Import page-specific CSS files here.
 @import "home";
 
+.container-books {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.page-top {
+  display: flex;
+  justify-content: space-between;
+  align: middle;
+  margin-bottom: 30px;
+}
+
+// .page-top h1{
+//   margin-bottom: 40px;
+
+// }
+
+.add a {
+  text-decoration: none;
+  align-items: center;
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+
+
 
 
