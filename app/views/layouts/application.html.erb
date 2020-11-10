@@ -14,9 +14,13 @@
     <div>
       <%= image_tag "book-logo2.png", id: "logo" %>
   </div>
-  <div><h1 id="title"><%= link_to BookMyBook, books_path %> </h1></div>
-  <div>
-      <%= image_tag "mama.png", class: "avatar" %>
+  <div><h1 id="title"><%= link_to BookMyBook, root_path %> </h1></div>
+    <div>
+      <% if user_signed_in? %>
+        <%= image_tag "mama.png", class: "avatar" %>
+        <% else %>
+       <span id="login"><%= link_to "Log in", user_session_path %></span>
+      <% end %>
     </div>
   </div>
 

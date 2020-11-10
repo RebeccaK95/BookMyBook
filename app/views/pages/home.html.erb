@@ -2,6 +2,9 @@
 
   <div class="welcome">
     <p >Welcome <%= current_user.email %></p>
+    <div class="button">
+    <%= link_to "See my dashboard", user_bookings_path %>
+    </div>
   </div>
 
   <% else %>
@@ -9,7 +12,7 @@
   <div id="sign-in">
     <div class="welcome">
     <p>Welcome!</p>
-    <p>Please <a href="" class="button">sign in</a> to enjoy the full experience of BookMyBook.</p>
+    <p>Please <span class="button"><%= link_to "sign in", user_session_path %></span> to enjoy the full experience of BookMyBook.</p>
     </div>
   </div>
 
