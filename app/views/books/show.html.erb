@@ -3,6 +3,7 @@
 <p><%= @book.category %></p>
 <p><%= @book.address %></p>
 
+<%= render "bookings/new", book: @book, booking: @booking %>
 <%= link_to "Delete book",
             book_path(@book),
             method: :delete,
