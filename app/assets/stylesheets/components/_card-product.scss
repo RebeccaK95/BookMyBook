@@ -1,6 +1,6 @@
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 170px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -48,4 +48,13 @@
   .cards {
     grid-template-columns: 1fr;
   }
+}
+
+.book-title a {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.card-text p {
+  font-size: 15px;
 }

@@ -1,15 +1,19 @@
-<h1>Books</h1>
-<%= link_to "Add a book", new_book_path(@book)  %>
-<div class="container">
+<div class="container-books">
+ <div class="page-top align-items-center">
+    <h1>Books availables</h1>
+   <span class="add"><%= link_to "Add a book", new_book_path(@book)  %></span>
+  </div>
   <div class="cards">
     <% @books.each do |book| %>
     <div class="card-product">
         <img src="https://source.unsplash.com/random"/>
         <div class="card-product-infos">
-          <h2><%= link_to book.title, book_path(book) %></h2>
-          <h3><%= book.author %></h3>
-          <p><%= book.category %></p>
-          <p><%= book.address %></p>
+          <h2 class="book-title"><%= link_to book.title, book_path(book) %></h2>
+          <h5><%= book.author %></h5>
+          <div class="card-text">
+            <p><%= book.category %></p>
+            <p> <%= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt".truncate(115) %> <%= link_to "Read more", book_path(book) %>  </p>
+          </div>
         </div>
       </div>
     <% end %>
