@@ -29,7 +29,7 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
+  config.active_storage.service = config.active_storage.service = :cloudinary
 
   # Default url
   config.action_mailer.default_url_options = { :host => 'bookmybook-rebeccak95.heroku.com' }
