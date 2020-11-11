@@ -6,7 +6,7 @@
   <div class="cards">
     <% @books.each do |book| %>
     <div class="card-product">
-        <img src="https://source.unsplash.com/random"/>
+        <%= cl_image_tag book.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="card-product-infos">
           <h2 class="book-title"><%= link_to book.title, book_path(book) %></h2>
           <h5><%= book.author %></h5>
@@ -19,4 +19,3 @@
     <% end %>
   </div>
 </div>
-
