@@ -12,14 +12,18 @@
   </head>
   <div class="navbar">
     <div>
-      <%= cl_image_tag user.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= image_tag "book-logo2.png", id: "logo" %>
   </div>
   <div><h1 id="title"><%= link_to BookMyBook, root_path %> </h1></div>
     <div>
       <% if user_signed_in? %>
-        <%= image_tag "mama.png", class: "avatar" %>
-        <span id="login"><%= link_to "Log out", destroy_user_session_path, :method => :delete %></span>
+        <% if current_user.photo.nil? %>
+          <%= cl_image_tag current_user.photo.key, class:"avatar" %>
+          <span id="login"><%= link_to "Log out", destroy_user_session_path, :method => :delete %></span>
         <% else %>
+          <span id="login"><%= link_to "Log out", destroy_user_session_path, :method => :delete %></span>
+        <% end %>
+      <% else %>
        <span id="login"><%= link_to "Log in", user_session_path %></span>
       <% end %>
     </div>
