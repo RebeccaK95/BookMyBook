@@ -12,6 +12,24 @@
   }
 }
 
+.button-show {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(226, 76, 65);
+  color: white;
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-size: 20px;
+  border-radius: 10px;
+  &:hover{
+    color: white;
+    text-decoration: none;
+    background-color: #423144;
+    transition: 0.3s;
+  }
+}
+
 .button {
   padding: 10px 20px;
   background-color: rgb(226, 76, 65);
