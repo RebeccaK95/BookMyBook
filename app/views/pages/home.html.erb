@@ -1,7 +1,7 @@
  <% if user_signed_in? %>
 
   <div class="welcome">
-    <p >Welcome <%= current_user.email %></p>
+    <p>Welcome <%= current_user.first_name %></p>
     <div id="small-btn">
     <%= link_to "Go to my dashboard", user_bookings_path(:user_id) %>
     <%= link_to "All the books", books_path %>
@@ -14,7 +14,7 @@
   <div id="sign-in">
     <div class="welcome">
     <p>Welcome!</p>
-    <p>Please <span class="button"><%= link_to "sign in", user_session_path %></span> to enjoy the full experience of BookMyBook.</p>
+    <p>Please <span class="button"><%= link_to "sign in", new_user_registration_path %></span> to enjoy the full experience of BookMyBook.</p>
     </div>
   </div>
 
