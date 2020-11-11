@@ -12,7 +12,7 @@
   </head>
   <div class="navbar">
     <div>
-      <%= image_tag "book-logo2.png", id: "logo" %>
+      <%= cl_image_tag user.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
   <div><h1 id="title"><%= link_to BookMyBook, root_path %> </h1></div>
     <div>
