@@ -3,5 +3,5 @@ class Book < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
 
-  validates :title, :author, :address, :category, presence: true
+  validates :title, :author, :address, :category, :photo, presence: true
 end
