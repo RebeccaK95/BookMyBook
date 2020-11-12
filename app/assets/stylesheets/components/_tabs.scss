@@ -28,3 +28,27 @@
   grid-gap: 15px;
   padding: 10px;
 }
+
+button {
+  outline: none !important;
+  background-color: white;
+  color: #555555;
+  border: none;
+  font-family: "Montserrat";
+  font-size: 15px;
+  &:hover {
+    color: lightgrey
+  }
+}
+
+button.active {
+  background-color: white;
+  color: #555555;
+  border: none;
+  font-family: "Montserrat";
+  font-size: 15px;
+  border-bottom: 3px solid #555555;
+  &:hover {
+    color: lightgrey
+  }
+}
