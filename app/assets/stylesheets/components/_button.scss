@@ -70,3 +70,23 @@
     transition: 0.3s;
   }
 }
+
+.button-outline {
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid #e24c41;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  &:hover {
+    border: 1px solid #423144;
+    transition: 0.3s;
+    color: #423144;
+    text-decoration: none;
+  }
+}
+
+button {
+  text-decoration: none;
+  border: none;
+}
