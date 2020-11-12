@@ -33,6 +33,24 @@
 
 .button {
   padding: 10px 20px;
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  background-color: rgb(226, 76, 65);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  &:hover{
+    color: white;
+    text-decoration: none;
+    background-color: #423144;
+    transition: 0.3s;
+  }
+}
+
+.button-card {
+  padding: 10px 20px;
+  font-family: "Montserrat";
+  font-size: 15px;
   background-color: rgb(226, 76, 65);
   color: white;
   text-decoration: none;
@@ -77,6 +95,7 @@
   padding: 10px 20px;
   border: 1px solid #e24c41;
   border-radius: 10px;
+  font-family: "Montserrat";
   font-size: 1.2rem;
   margin-left: 1rem;
   &:hover {
@@ -85,9 +104,4 @@
     color: #423144;
     text-decoration: none;
   }
-}
-
-button {
-  text-decoration: none;
-  border: none;
 }
