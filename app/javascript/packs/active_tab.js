@@ -1,6 +1,16 @@
 const tabActive = () => {
-  let Buttons = document.querySelectorAll(".selectSection button");
 
+  //displaying all directly
+  let Buttons = document.querySelectorAll(".selectSection button");
+  for (let button of Buttons) {
+   let allC = document.querySelectorAll('.content');
+    for (let c of allC) {
+      const act = document.querySelector(".active")
+      if(c.getAttribute('data-number') === act.getAttribute('data-number')) {
+          c.style.display = "block";
+       }
+    }
+  }
   // loop through the buttons using for..of
   for (let button of Buttons) {
 
