@@ -23,9 +23,10 @@ private
                 .class
                 .where.not(id: id)
                 .where(book_id: book_id)
-                .where('start_date < ? AND end_date > ?', end_date, start_date)
+                .where('start_date <= ? AND end_date >= ?', end_date, start_date)
                 .none?
 
-    errors.add(:base, 'Overlapping reservation exists')
+    errors.add(:start_date, 'Overlapping reservation exists')
+    errors.add(:end_date, 'Overlapping reservation exists')
   end
 end
