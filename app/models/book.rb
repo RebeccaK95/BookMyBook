@@ -4,4 +4,11 @@ class Book < ApplicationRecord
   has_one_attached :photo
 
   validates :title, :author, :address, :category, :photo, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :pg_search,
+  against: [:title, :author, :category],
+  using: {
+  	tsearch: {prefix: true}
+  }
 end
