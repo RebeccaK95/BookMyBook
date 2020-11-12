@@ -27,6 +27,8 @@ require("channels")
 import "bootstrap";
 import { scrollTo } from "./scroll_to.js"
 import { initFlatpickr } from "./init_flatpickr.js"
+import { tabActive } from "./active_tab.js"
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,5 +37,10 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   scrollTo();
+  tabActive();
   initFlatpickr();
 });
+
+
+
+

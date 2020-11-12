@@ -1,80 +1,104 @@
 <div class="container-books">
-  <ul class="list-inline tabs-underlined">
-    <li>
-      <a href="#" class="tab-underlined">Current bookings</a>
-    </li>
-    <li>
-      <a href="#" class="tab-underlined active">Past bookings</a>
-    </li>
-    <li>
-      <a href="#" class="tab-underlined">Requests</a>
-    </li>
-    <li>
-      <a href="#" class="tab-underlined">My personal library</a>
-    </li>
-  </ul>
-  <div class="cards">
+  <div class="selectSection ">
+   <button type="button" data-number="1" class="active">Current bookings</button>
+   <button type="button" data-number="2">Past bookings</button>
+   <button type="button" data-number="3">My books</button>
+  </div>
+
+  <div class="contentSection cards">
     <% @bookings.each do |booking| %>
-      <div class="card-product booking-card">
-        <%= cl_image_tag booking.book.photo.key %>
-        <div class="card-product-infos">
-          <p class="small-p">From <%= booking.start_date%> to <%= booking.end_date %></p>
-          <h2><%= link_to booking.book.title, book_path(booking.book) %></h2>
-          <div class="card-text">
-            <p><%= link_to "More info about this book", book_path(booking.book) %></p>
+      <div class="booking-card content" data-number="1">
+        <div class="card-product">
+          <%= cl_image_tag booking.book.photo.key %>
+          <div class="card-product-infos">
+            <p class="small-p">From <%= booking.start_date%> to <%= booking.end_date %></p>
+            <h2><%= link_to booking.book.title, book_path(booking.book) %></h2>
+            <div class="card-text">
+              <p><%= link_to "More info about this book", book_path(booking.book) %></p>
+            </div>
           </div>
         </div>
       </div>
     <% end %>
-  </div>
-  <% if @books != [] %>
-    <div class="cards">
-      <div class="card-product booking-card">
-        <% @books.each do |book| %>
-          <%= cl_image_tag book.photo.key %>
+   <!---------------------------------------------------------------------------------------->
+    <% @past_bookings.each do |booking| %>
+      <div class="booking-card content" data-number="1">
+        <div class="card-product">
+          <%= cl_image_tag booking.book.photo.key %>
           <div class="card-product-infos">
-            <h2><%= link_to book.title, book_path(book) %></h2>
-            <p><%= book.author %></p>
-            <p><%= book.description %></p>
-            <br>
-            <!-- Edit link -->
-            <%= link_to "Edit book", edit_book_path(book), class: "button", "data-toggle" => "modal", 'data-target' => '#editModal' %>
-            <!-- Edit modal -->
-            <div class="modal fade" id="editModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Edit "<%= book.title %>"</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
+            <p class="small-p">From <%= booking.start_date%> to <%= booking.end_date %></p>
+            <h2><%= link_to booking.book.title, book_path(booking.book) %></h2>
+            <div class="card-text">
+              <p><%= link_to "More info about this book", book_path(booking.book) %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <!---------------------------------------------------------------------------------------->
+    <% @past_bookings.each do |booking| %>
+      <div class="booking-card content" data-number="2">
+        <div class="card-product">
+          <%= cl_image_tag booking.book.photo.key %>
+          <div class="card-product-infos">
+            <p class="small-p">From <%= booking.start_date%> to <%= booking.end_date %></p>
+            <h2><%= link_to booking.book.title, book_path(booking.book) %></h2>
+            <div class="card-text">
+              <p><%= link_to "More info about this book this is the second section", book_path(booking.book) %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <% if @books != [] %>
+      <div class="booking-card content" data-number="3">
+        <div class="card-product">
+          <% @books.each do |book| %>
+            <%= cl_image_tag book.photo.key %>
+            <div class="card-product-infos">
+              <h2><%= link_to book.title, book_path(book) %></h2>
+              <p><%= book.author %></p>
+              <p><%= book.description %></p>
+              <br>
+              <!-- Edit link -->
+              <%= link_to "Edit book", edit_book_path(book), class: "button", "data-toggle" => "modal", 'data-target' => '#editModal' %>
+              <!-- Edit modal -->
+              <div class="modal fade" id="editModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Edit "<%= book.title %>"</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <%= simple_form_for(book) do |f| %>
+                      <div class="modal-body">
+                        <%= f.input :title %>
+                        <%= f.input :author %>
+                        <%= f.input :category %>
+                        <%= f.input :description %>
+                        <%= f.input :address %>
+                        <%= f.input :photo, as: :file %>
+                      </div>
+                      <div class="modal-footer">
+                        <%= link_to 'Back', user_bookings_path(current_user), class: "button-outline" %>
+                        <%= f.button :submit, 'Save changes', class: "button" %>
+                      </div>
+                    <% end %>
                   </div>
-                  <%= simple_form_for(book) do |f| %>
-                    <div class="modal-body">
-                      <%= f.input :title %>
-                      <%= f.input :author %>
-                      <%= f.input :category %>
-                      <%= f.input :description %>
-                      <%= f.input :address %>
-                      <%= f.input :photo, as: :file %>
-                    </div>
-                    <div class="modal-footer">
-                      <%= link_to 'Back', user_bookings_path(current_user), class: "button-outline" %>
-                      <%= f.button :submit, 'Save changes', class: "button" %>
-                    </div>
-                  <% end %>
                 </div>
               </div>
+              <!-- Delete link -->
+              <%= link_to "Delete book",
+                  book_path(book),
+                  class: "button",
+                  method: :delete,
+                  data: { confirm: "Are you sure you want to delete this book?" }
+                  %>
             </div>
-            <!-- Delete link -->
-            <%= link_to "Delete book",
-                book_path(book),
-                class: "button",
-                method: :delete,
-                data: { confirm: "Are you sure you want to delete this book?" }
-                %>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       <% else %>
         <p>You are not renting any book for now. Add one to your library!</p>
         <div>
@@ -82,5 +106,7 @@
         </div>
       </div>
     </div>
+    </div>
   <% end %>
 </div>
+
