@@ -1,11 +1,27 @@
-<h1>My bookings</h1>
-
-<% @bookings.each do |booking| %>
-  <ul>
-    <li><%= link_to booking.book.title, book_path(booking.book) %></li>
-    <li>Start date: <%= booking.start_date %></li>
-    <li>End date: <%= booking.end_date %></li>
+<div class="container-books">
+  <ul class="list-inline tabs-underlined">
+    <li>
+      <a href="#" class="tab-underlined">Current bookings</a>
+    </li>
+    <li>
+      <a href="#" class="tab-underlined active">Past bookings</a>
+    </li>
+    <li>
+      <a href="#" class="tab-underlined">Requests</a>
+    </li>
   </ul>
-<% end %>
-
-
+  <div class="cards">
+    <% @bookings.each do |booking| %>
+      <div class="card-product booking-card">
+        <%= cl_image_tag booking.book.photo.key %>
+        <div class="card-product-infos">
+          <p class="small-p">From <%= booking.start_date%> to <%= booking.end_date %></p>
+          <h2><%= link_to booking.book.title, book_path(booking.book) %></h2>
+          <div class="card-text">
+            <p><%= link_to "More info about this book", book_path(booking.book) %>  </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
