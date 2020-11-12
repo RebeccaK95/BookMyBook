@@ -1,6 +1,10 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
+    if params[:query].present?
+      @books = Book.pg_search(params[:query])
+    else
+      @books = Book.all
+    end
   end
 
   def show
@@ -20,6 +24,16 @@ class BooksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_to book_path(book)
   end
 
   def destroy

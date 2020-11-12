@@ -5,10 +5,16 @@ class Book < ApplicationRecord
 
   validates :title, :author, :address, :category, :photo, presence: true
 
+  include PgSearch::Model
+  pg_search_scope :pg_search,
+  against: [:title, :author, :category],
+  using: {
+    tsearch: {prefix: true}
+  }
+
   def unavailable_dates
     bookings.pluck(:start_date, :end_date).map do |range|
       { from: range[0], to: range[1] }
     end
   end
-
 end
