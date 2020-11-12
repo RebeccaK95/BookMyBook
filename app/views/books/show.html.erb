@@ -14,17 +14,32 @@
     <p><%= @book.description%></p>
     <p><%= @book.address %></p>
 
-    <%= link_to "Delete book",
+   <div class="link-show"> <%= link_to "Delete book",
                 book_path(@book),
                 method: :delete,
                 data: { confirm: "Are you sure you want to delete this book?" }
                 %>
+  </div>
+  <div class="link-show">
     <%= link_to "Go back to all books", books_path  %>
   </div>
+</div>
 
 </div>
-<div class="container books">
+<div class="container-books">
   <div id="form-rent">
     <%= render "bookings/new", book: @book, booking: @booking %>
   </div>
 </div>
+
+
+<div id='book-booking-dates' data-unavailable="<%= @book.unavailable_dates.to_json %>">
+    <% if current_user.id != @book.user_id  %>
+       <%= simple_form_for([@book, @booking]) do |f| %>
+           <%= f.input :start_date, as: :string, type: :text, class: "booking_start_date" %>
+           <%= f.input :end_date, as: :string, type: :text, class: "booking_end_date" %>
+           <%= f.submit "Book", class: "btn btn-primary" %>
+        <% end %>
+    <% end %>
+ </div>
+

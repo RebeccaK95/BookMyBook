@@ -12,7 +12,7 @@
           <h5><%= book.author %></h5>
           <div class="card-text">
             <p><%= book.category %></p>
-            <p> <%= book.description.to_s.truncate(115) %> <%= link_to "Read more", book_path(book) %>  </p>
+            <p> <%= book.description.to_s.truncate(95) %> <%= link_to "Read more", book_path(book) %>  </p>
           </div>
         </div>
       </div>

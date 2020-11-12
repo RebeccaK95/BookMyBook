@@ -28,4 +28,5 @@ private
 
     errors.add(:base, 'Overlapping reservation exists')
   end
+
 end
