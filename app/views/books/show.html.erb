@@ -26,20 +26,11 @@
 </div>
 
 </div>
-<div class="container-books">
+<div class="container-show">
   <div id="form-rent">
     <%= render "bookings/new", book: @book, booking: @booking %>
   </div>
 </div>
 
 
-<div id='book-booking-dates' data-unavailable="<%= @book.unavailable_dates.to_json %>">
-    <% if current_user.id != @book.user_id  %>
-       <%= simple_form_for([@book, @booking]) do |f| %>
-           <%= f.input :start_date, as: :string, type: :text, class: "booking_start_date" %>
-           <%= f.input :end_date, as: :string, type: :text, class: "booking_end_date" %>
-           <%= f.submit "Book", class: "btn btn-primary" %>
-        <% end %>
-    <% end %>
- </div>
 
