@@ -27,6 +27,7 @@
   grid-template-columns: 1fr;
   grid-gap: 15px;
   padding: 10px;
+  margin-top: 30px;
 }
 
 button {
@@ -36,6 +37,7 @@ button {
   border: none;
   font-family: "Montserrat";
   font-size: 15px;
+  margin-right: 20px;
   &:hover {
     color: lightgrey
   }
@@ -51,4 +53,9 @@ button.active {
   &:hover {
     color: lightgrey
   }
+}
+
+p.big-p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
 }

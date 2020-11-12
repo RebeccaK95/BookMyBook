@@ -1,23 +1,27 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="banner">
+  <div class="container">
+    <h1>Search for a book</h1>
+    <%= link_to "Add a book", new_book_path(@book), class: "button-white" %>
+  </div>
+</div>
+
 <div class="container-books">
- <div class="page-top align-items-center">
-    <h1>Books availables</h1>
-   <span class="add"><%= link_to "Add a book", new_book_path(@book)  %></span>
-  </div>
   <%= simple_form_for :search, url: books_path, method: :get do |f| %>
-  <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" placeholder="A reading wish..." name="[query]" id="pg_search" />
-    <div class="row flex-row d-flex justify-content-between">
-      <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i> Let's see if we can make you happy...
-      </button>
-       <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-hand-point-left"></i> Let's go back ...
-      </button>
+    <div class="search-form-control form-group mb-4">
+      <input class="form-control string required" type="text" placeholder="A reading wish..." name="[query]" id="pg_search" />
+      <div class="row flex-row d-flex justify-content-between mx-0 my-2">
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i> Let's see if we can make you happy...
+        </button>
+         <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-hand-point-left"></i> Let's go back ...
+        </button>
+      </div>
     </div>
-  </div>
-<% end %>
-  <div class="cards">
+  <% end %>
+  <hr>
+  <h2>Books available</h2>
+  <div class="cards mt-4">
     <% @books.each do |book| %>
     <div class="card-product">
         <%= cl_image_tag book.photo.key %>
@@ -26,7 +30,7 @@
           <h5><%= book.author %></h5>
           <div class="card-text">
             <p><%= book.category %></p>
-            <p> <%= book.description.to_s.truncate(95) %> <%= link_to "Read more", book_path(book) %>  </p>
+            <p><%= book.description.to_s.truncate(95) %> <%= link_to "Read more", book_path(book) %></p>
           </div>
         </div>
       </div>
