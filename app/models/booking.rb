@@ -29,4 +29,5 @@ private
     errors.add(:start_date, 'Overlapping reservation exists')
     errors.add(:end_date, 'Overlapping reservation exists')
   end
+
 end
