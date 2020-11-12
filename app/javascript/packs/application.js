@@ -26,8 +26,8 @@ require("channels")
 // External imports
 import "bootstrap";
 import { scrollTo } from "./scroll_to.js"
-import { tabActive } from "./active_tab.js"
 import { initFlatpickr } from "./init_flatpickr.js"
+import { tabActive } from "./active_tab.js"
 
 
 // Internal imports, e.g:
