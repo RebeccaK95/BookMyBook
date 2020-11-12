@@ -37,6 +37,24 @@
   color: white;
   text-decoration: none;
   border-radius: 10px;
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  &:hover{
+    color: white;
+    text-decoration: none;
+    background-color: #423144;
+    transition: 0.3s;
+  }
+}
+
+.button-card {
+  padding: 10px 20px;
+  background-color: rgb(226, 76, 65);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-family: "Montserrat";
+  font-size: 15px;
   &:hover{
     color: white;
     text-decoration: none;
@@ -78,6 +96,7 @@
   border: 1px solid #e24c41;
   border-radius: 10px;
   font-size: 1.2rem;
+  font-family: "Montserrat";
   margin-left: 1rem;
   &:hover {
     border: 1px solid #423144;
@@ -87,7 +106,14 @@
   }
 }
 
-button {
-  text-decoration: none;
+
+.button-tab {
+  background-color: white;
+  color: grey;
   border: none;
+  font-family: "Montserrat";
+  font-size: 15px;
+  &:hover {
+    color: lightgrey
+  }
 }
