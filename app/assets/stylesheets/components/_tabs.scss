@@ -17,3 +17,14 @@
   opacity: 1;
   border-bottom: 3px solid #555555;
 }
+
+.content:not(:first-child) {
+    display: none;
+}
+
+.contentSection.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+  padding: 10px;
+}

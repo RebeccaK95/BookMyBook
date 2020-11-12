@@ -1,6 +1,13 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.where(user_id: current_user.id)
+    @books = Book.where(user_id: current_user.id)
+    @past_bookings = []
+    @bookings.each do |booking|
+      if booking.end_date < Date.today
+        @past_bookings << booking
+      end
+    end
   end
 
   def new
