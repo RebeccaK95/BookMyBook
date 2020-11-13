@@ -23,9 +23,17 @@
 }
 
 .link-show a {
+  color: $red;
+  font-family: "Montserrat";
+  font-size: 20px;
   text-decoration: none;
-  font-size: 25px;
+}
 
+.link-show {
+  color: $red;
+  font-family: "Montserrat";
+  font-size: 20px;
+  text-decoration: none;
 }
 
 .container-rent {
