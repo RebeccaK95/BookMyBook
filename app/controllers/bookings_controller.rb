@@ -8,6 +8,12 @@ class BookingsController < ApplicationController
         @past_bookings << booking
       end
     end
+    @current_bookings = []
+    @bookings.each do |booking|
+      if booking.end_date < Date.today
+        @current_bookings << booking
+      end
+    end
   end
 
   def new
