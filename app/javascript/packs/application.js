@@ -28,6 +28,7 @@ import "bootstrap";
 import { scrollTo } from "./scroll_to.js"
 import { initFlatpickr } from "./init_flatpickr.js"
 import { tabActive } from "./active_tab.js"
+import { heart } from "./heart.js"
 
 
 // Internal imports, e.g:
@@ -38,6 +39,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   scrollTo();
   tabActive();
+  heart();
   initFlatpickr();
 });
 
