@@ -12,7 +12,7 @@
   </div>
 
   <div class="contentSection cards">
-    <% @bookings.each do |booking| %>
+    <% @current_bookings.each do |booking| %>
       <div class="booking-card content" data-number="1">
         <div class="card-product">
           <%= cl_image_tag booking.book.photo.key %>
@@ -27,21 +27,6 @@
       </div>
     <% end %>
    <!---------------------------------------------------------------------------------------->
-    <% @past_bookings.each do |booking| %>
-      <div class="booking-card content" data-number="1">
-        <div class="card-product">
-          <%= cl_image_tag booking.book.photo.key %>
-          <div class="card-product-infos">
-            <p class="small-p">From <%= booking.start_date%> to <%= booking.end_date %></p>
-            <h2><%= link_to booking.book.title, book_path(booking.book) %></h2>
-            <div class="card-text">
-              <p><%= link_to "More info about this book", book_path(booking.book) %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
-    <!---------------------------------------------------------------------------------------->
     <% @past_bookings.each do |booking| %>
       <div class="booking-card content" data-number="2">
         <div class="card-product">
