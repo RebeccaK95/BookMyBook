@@ -42,10 +42,10 @@
       </div>
     <% end %>
     <!---------------------------------------------------------------------------------------->
-    <div class="booking-card content" data-number="3">
-      <% if @books != [] %>
-        <div class="card-product">
-          <% @books.each do |book| %>
+    <% if @books != [] %>
+      <% @books.each do |book| %>
+        <div class="booking-card content" data-number="3">
+          <div class="card-product">
             <%= cl_image_tag book.photo.key %>
             <div class="card-product-infos">
               <h2><%= link_to book.title, book_path(book) %></h2>
@@ -89,14 +89,16 @@
                   data: { confirm: "Are you sure you want to delete this book?" }
                   %>
             </div>
-          <% end %>
+          </div>
         </div>
-      <% else %>
-        <p class="big-p">You are not renting any book for now. Add one to your library!</p>
+      <% end %>
+    <% else %>
+      <div class="booking-card content" data-number="3">
+        <p class="big-p">You don't have any book to rent for now. Add one to your library!</p>
         <div>
           <%= link_to "Add a book", new_book_path, class: "button" %>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
