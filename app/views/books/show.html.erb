@@ -16,13 +16,13 @@
     <div class="d-flex">
       <div class="mr-auto p-2"><h1 class="book-title"><%= @book.title %></h1></div>
       <div class="p-2"><span class="button-show">Rent me</span></div>
-      <div class="p-2"><a href="#" class="heart heart-solid"><i id="heart-id" class="fa-heart far"></i></a></div>
+      <div class="p-2"><a class="heart heart-solid"><i id="heart-id" class="fa-heart far"></i></a></div>
     </div>
 
-    <h3><%= @book.author %></h3>
-    <p><%= @book.category %></p>
-    <p><%= @book.description %></p>
-    <p><%= @book.address %></p>
+    <h3 style="padding-left: 8px;"><%= @book.author %></h3>
+    <p style="padding-left: 8px;"><%= @book.category %></p>
+    <p style="padding-left: 8px;"><%= @book.description %></p>
+    <p style="padding-left: 8px;"><%= @book.address %></p>
     <div class="link-show">
       <%= link_to "Go back to all books", books_path  %>
     </div>
