@@ -1,0 +1,23 @@
+.banner {
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.1)), image-url("background.jpg");
+  height: 250px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.banner h1 {
+  padding: 30px 0px;
+  color: white;
+  font-size: 40px;
+  text-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.banner > .container {
+  margin-top: 0;
+  width: 800px;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

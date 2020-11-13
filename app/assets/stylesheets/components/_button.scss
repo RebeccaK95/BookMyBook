@@ -106,7 +106,6 @@
   }
 }
 
-
 .button-tab {
   background-color: white;
   color: grey;
@@ -115,5 +114,21 @@
   font-size: 15px;
   &:hover {
     color: lightgrey
+  }
+}
+
+.button-white {
+  padding: 10px 20px;
+  background-color: #423144;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  &:hover{
+    color: #423144;
+    text-decoration: none;
+    background-color: white;
+    transition: 0.3s;
   }
 }

@@ -1,8 +1,14 @@
+<div class="banner">
+  <div class="container">
+    <h1>My dashboard</h1>
+  </div>
+</div>
+
 <div class="container-books">
   <div class="selectSection ">
    <button type="button" data-number="1" class="active">Current bookings</button>
    <button type="button" data-number="2">Past bookings</button>
-   <button type="button" data-number="3">My books</button>
+   <button type="button" data-number="3">My own books</button>
   </div>
 
   <div class="contentSection cards">
@@ -49,16 +55,17 @@
           </div>
         </div>
       </div>
-      <% end %>
+    <% end %>
+    <!---------------------------------------------------------------------------------------->
+    <div class="booking-card content" data-number="3">
       <% if @books != [] %>
-      <div class="booking-card content" data-number="3">
         <div class="card-product">
           <% @books.each do |book| %>
             <%= cl_image_tag book.photo.key %>
             <div class="card-product-infos">
               <h2><%= link_to book.title, book_path(book) %></h2>
               <p><%= book.author %></p>
-              <p><%= book.description %></p>
+              <p><%= book.description.to_s.truncate(95) %> <%= link_to "Read more", book_path(book) %></p>
               <br>
               <!-- Edit link -->
               <%= link_to "Edit book", edit_book_path(book), class: "button-card", "data-toggle" => "modal", 'data-target' => '#editModal' %>
@@ -100,13 +107,11 @@
           <% end %>
         </div>
       <% else %>
-        <p>You are not renting any book for now. Add one to your library!</p>
+        <p class="big-p">You are not renting any book for now. Add one to your library!</p>
         <div>
           <%= link_to "Add a book", new_book_path, class: "button" %>
         </div>
-      </div>
+      <% end %>
     </div>
-    </div>
-  <% end %>
+  </div>
 </div>
-
